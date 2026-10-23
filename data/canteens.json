@@ -1,0 +1,14 @@
+{
+  "synthetic": true,
+  "last_updated": "2026-10-23",
+  "notice": "Entirely synthetic demonstration venues, menus, prices, opening hours and routes. Not verified HKU dining information.",
+  "canteens": [
+    {"id":"library-noodles","name":"Demo Library Noodle Counter","building":"Main Library","floor":"G","hours":{"weekday":[["08:00","20:00"]],"weekend":[["10:00","17:00"]]},"price_min":28,"price_max":48,"cuisine":["noodles","chinese"],"tags":["spicy"],"tip":"Allow about 10 minutes to order and eat."},
+    {"id":"main-rice","name":"Demo Main Building Rice Kitchen","building":"Main Building","floor":"1","hours":{"weekday":[["10:00","19:00"]],"weekend":[]},"price_min":30,"price_max":52,"cuisine":["rice","chinese"],"tags":["vegetarian","spicy"],"tip":"Vegetarian is a menu tag, not an allergy guarantee."},
+    {"id":"union-canteen","name":"Demo Union Canteen","building":"Union Building","floor":"2","hours":{"weekday":[["07:30","21:00"]],"weekend":[["09:00","18:00"]]},"price_min":24,"price_max":40,"cuisine":["rice","noodles","chinese"],"tags":["vegetarian"],"tip":"Check menu choices at the counter."},
+    {"id":"centennial-greens","name":"Demo Centennial Greens","building":"Centennial Campus","floor":"G","hours":{"weekday":[["11:00","15:00"],["17:00","20:00"]],"weekend":[["11:00","16:00"]]},"price_min":35,"price_max":58,"cuisine":["salad","western"],"tags":["vegetarian","vegan"],"tip":"The synthetic menu includes vegan choices."},
+    {"id":"library-coffee","name":"Demo Library Coffee Room","building":"Main Library","floor":"1","hours":{"weekday":[["08:00","18:00"]],"weekend":[["10:00","16:00"]]},"price_min":22,"price_max":42,"cuisine":["coffee","sandwich"],"tags":["vegetarian","quiet"],"tip":"Quiet is a demo tag, not a live noise reading."},
+    {"id":"centennial-spice","name":"Demo Centennial Spice Counter","building":"Centennial Campus","floor":"1","hours":{"weekday":[["11:00","20:30"]],"weekend":[["11:00","18:00"]]},"price_min":32,"price_max":55,"cuisine":["noodles","chinese"],"tags":["spicy","vegetarian"],"tip":"Ask the vendor about spice and ingredients."},
+    {"id":"chong-yuet","name":"Demo Chong Yuet Ming Kitchen","building":"Chong Yuet Ming","floor":"3","hours":{"weekday":[["09:00","18:30"]],"weekend":[]},"price_min":29,"price_max":50,"cuisine":["rice","western"],"tags":["vegetarian"],"tip":"Walking estimates exclude queues and lifts."}
+  ]
+}

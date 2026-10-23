@@ -1,0 +1,13 @@
+{
+  "synthetic": true,
+  "last_updated": "2026-10-23",
+  "notice": "Illustrative building links, not surveyed or accessible navigation. Times exclude lifts, queues and eating.",
+  "edges": [
+    ["Main Library","Main Building",4],
+    ["Main Library","Union Building",5],
+    ["Main Library","Centennial Campus",9],
+    ["Main Building","Chong Yuet Ming",5],
+    ["Union Building","Chong Yuet Ming",4],
+    ["Union Building","Centennial Campus",7]
+  ]
+}
