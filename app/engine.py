@@ -139,7 +139,7 @@ def chat(text, state, at=None, llm=None):
     if re.search(r'lobster|fine dining|high.end', text, re.I):
         return dict(result, kind='no_match', message='No matching high-end or lobster venue exists in this fixed demo dataset. Try a campus meal or change the cuisine.')
     patch = fallback_parse(text, context)
-    if llm:
+    if llm and getattr(llm, 'enabled', True):
         try:
             parsed = llm.complete(
                 'Extract only explicitly requested filter changes as a JSON object. Omit unchanged fields; null clears a field. '
@@ -213,4 +213,5 @@ def chat(text, state, at=None, llm=None):
         except Exception:
             result['mode'] = 'hybrid'
             result['notice'] = 'Model ranking unavailable or invalid; using price and walk-time ordering.'
-    return dict(result, kind='recommend', message=f"Found {min(3, len(candidates))} matching demo option(s). Prices are starting prices; not every dish fits the budget.", recommendations=candidates[:3])
+    count = min(3, len(candidates))
+    return dict(result, kind='recommend', message=f"Found {count} matching demo option{'s' if count != 1 else ''}. Prices are starting prices; not every dish fits the budget.", recommendations=candidates[:3])

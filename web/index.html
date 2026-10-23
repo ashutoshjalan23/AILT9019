@@ -14,7 +14,7 @@
         <label for="clock">Demo date &amp; time (Hong Kong)</label><div class="clock-row"><input type="datetime-local" id="clock" value="2026-10-23T12:30"><button id="now" type="button" class="secondary">Use now</button></div>
       </div>
       <div id="conversation" role="log" aria-live="polite" aria-label="Conversation"><p class="assistant">Where are you starting from? Try “spicy noodles under $40” or “vegetarian, 25 minutes between classes”.</p></div>
-      <form id="chat-form"><label for="message">Your request</label><textarea id="message" rows="2" maxlength="1000" required placeholder="Spicy, cheap and open at this time"></textarea><div class="form-footer"><span id="mode">Checking model connection…</span><button id="send" type="submit">Find food</button></div></form>
+      <form id="chat-form"><label for="message">Your request</label><textarea id="message" rows="2" maxlength="1000" required aria-describedby="error" placeholder="Spicy, cheap and open at this time"></textarea><div class="form-footer"><span id="mode">Checking model connection…</span><button id="send" type="submit">Find food</button></div></form>
       <p id="error" role="alert"></p>
     </section>
     <section aria-labelledby="results-heading"><div class="section-heading"><h2 id="results-heading">Your options</h2></div><p id="filters" class="muted">Your preferences will appear here.</p><p id="evaluated" class="muted"></p><div id="results"><div class="empty"><h3>Start with your building.</h3><p>We’ll check demo opening hours, match your preferences and estimate the walk.</p></div></div></section>

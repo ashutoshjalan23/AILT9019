@@ -62,6 +62,11 @@ class EngineTests(unittest.TestCase):
         r = chat('Main Library, cheap',{},datetime(2026,10,23,12,30,tzinfo=HK),Broken())
         self.assertEqual(r['kind'],'recommend'); self.assertEqual(r['mode'],'offline')
 
+    def test_deliberate_offline_mode_has_no_failure_notice(self):
+        model = Bailian(); model.enabled = False
+        r = chat('Main Library, cheap',{},datetime(2026,10,23,12,30,tzinfo=HK),model)
+        self.assertEqual(r['mode'],'offline'); self.assertNotIn('notice',r)
+
     def test_invalid_filter_values(self):
         for value in ({'diet':'allergy-safe'},{'budget':-1},{'budget':True},{'building':'Made up'},{'clock':'99:00'}):
             with self.subTest(value=value), self.assertRaises(ValueError): validate_patch(value)

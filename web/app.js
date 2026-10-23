@@ -17,7 +17,8 @@ function setBusy(value) {
 }
 function render(data) {
   $('results').replaceChildren();
-  $('filters').textContent = Object.entries(data.context).map(([k,v]) => `${k.replaceAll('_',' ')}: ${v}`).join(' · ') || 'No preferences yet.';
+  const labels = {building:v=>v, diet:v=>v, cuisine:v=>v, budget:v=>`Up to HK$${v}`, time_limit:v=>`${v} min break`, spicy:v=>v?'Spicy':'No spicy tag', quiet:v=>v?'Quiet':'No quiet tag', clock:v=>`At ${v}`};
+  $('filters').textContent = Object.entries(data.context).map(([k,v]) => labels[k] ? labels[k](v) : '').filter(Boolean).join(' · ') || 'No preferences yet.';
   $('evaluated').textContent = `Checked at ${data.at.slice(0,16).replace('T',' ')} (Hong Kong)`;
   $('mode').textContent = data.mode === 'bailian' ? 'Bailian model + fixed-data filters' : data.mode === 'hybrid' ? 'Model parsing + offline ranking' : 'Offline rules demo';
   if (data.notice) $('mode').textContent += '. ' + data.notice;
