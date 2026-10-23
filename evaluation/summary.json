@@ -1,0 +1,24 @@
+{
+  "run_at": "2026-10-23T22:01:07.754666+08:00",
+  "mode": "offline",
+  "data": "synthetic",
+  "groups": {
+    "normal": [
+      11,
+      11
+    ],
+    "refusal": [
+      3,
+      3
+    ],
+    "edge": [
+      3,
+      3
+    ],
+    "multi_turn": [
+      3,
+      3
+    ]
+  },
+  "limits": "Automated fixture assertions only. No live Bailian, public-data, peer-review or manual usability validation."
+}

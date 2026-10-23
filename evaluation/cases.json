@@ -1,0 +1,22 @@
+[
+  {"id":"N01","group":"normal","turns":["I'm at Main Library, spicy, cheap and open now"],"kind":"recommend","expected_ids":["library-noodles","main-rice","centennial-spice"],"context":{"budget":35,"spicy":true,"building":"Main Library"}},
+  {"id":"N02","group":"normal","turns":["Vegetarian options near Main Library"],"kind":"recommend","context":{"diet":"vegetarian","building":"Main Library"}},
+  {"id":"N03","group":"normal","turns":["I'm at Main Library and have 25 minutes between classes"],"kind":"recommend","context":{"time_limit":25}},
+  {"id":"N04","group":"normal","turns":["At Main Building, not too expensive, want noodles"],"kind":"recommend","context":{"budget":35,"cuisine":"noodles"}},
+  {"id":"N05","group":"normal","turns":["Somewhere quiet for coffee at Main Library"],"kind":"recommend","expected_ids":["library-coffee"],"context":{"quiet":true,"cuisine":"coffee"}},
+  {"id":"N06","group":"normal","turns":["I'm at Centennial Campus, vegan please"],"kind":"recommend","expected_ids":["centennial-greens"],"context":{"diet":"vegan"}},
+  {"id":"N07","group":"normal","turns":["Rice under $30 at Union Building"],"kind":"recommend","expected_ids":["union-canteen","chong-yuet","main-rice"],"context":{"budget":30,"cuisine":"rice"}},
+  {"id":"N08","group":"normal","turns":["I'm at Chong Yuet Ming, vegetarian under $35"],"kind":"recommend","context":{"diet":"vegetarian","budget":35}},
+  {"id":"N09","group":"normal","turns":["I'm at Main Library, coffee at 9 am"],"kind":"recommend","expected_ids":["library-coffee"],"context":{"clock":"09:00"}},
+  {"id":"N10","group":"normal","turns":["At Centennial Campus, spicy noodles"],"kind":"recommend","context":{"cuisine":"noodles","spicy":true}},
+  {"id":"N11","group":"normal","turns":["At Main Library, vegetarian, not spicy"],"kind":"recommend","context":{"diet":"vegetarian","spicy":false}},
+  {"id":"R01","group":"refusal","turns":["I'm at Main Library, still open at 11 pm"],"kind":"no_match"},
+  {"id":"R02","group":"refusal","turns":["Deliver food to my dorm, book a table outside campus"],"kind":"refusal"},
+  {"id":"R03","group":"refusal","turns":["I have a peanut allergy, is this safe?"],"kind":"refusal"},
+  {"id":"E01","group":"edge","turns":["At Main Library, very cheap and very high-end"],"kind":"clarify"},
+  {"id":"E02","group":"edge","turns":["I'm at Centennial Campus, what can I eat?"],"kind":"recommend"},
+  {"id":"E03","group":"edge","turns":["At Main Library, something healthy"],"kind":"clarify"},
+  {"id":"M01","group":"multi_turn","turns":["I want something cheap","I'm at Main Library","Only vegetarian","Make it cheaper"],"kinds":["clarify","recommend","recommend","recommend"],"kind":"recommend","context":{"budget":25,"diet":"vegetarian","building":"Main Library"},"expected_ids":["union-canteen","library-coffee"]},
+  {"id":"M02","group":"multi_turn","turns":["I'm at Main Library","Any vegetarian options?","Only vegan"],"kinds":["recommend","recommend","recommend"],"kind":"recommend","context":{"diet":"vegan","building":"Main Library"},"expected_ids":["centennial-greens"]},
+  {"id":"M03","group":"multi_turn","turns":["Cheap food","Anything","Still unsure"],"kinds":["clarify","clarify","clarify"],"kind":"clarify","contains":"supported starting building"}
+]
