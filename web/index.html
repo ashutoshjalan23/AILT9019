@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>HKU Dining | Team 34</title><link rel="stylesheet" href="/style.css"><script src="/app.js" defer></script></head>
+<body>
+<header><a href="/" class="brand">HKU Dining</a><span>Team 34 · Midterm prototype</span></header>
+<main>
+  <div class="intro"><h1>A meal between classes.</h1><p>Tell us where you are, what you like and how much time you have.</p></div>
+  <aside class="notice"><strong>Synthetic data demo.</strong> All venues, prices, hours and routes are illustrative. Verify real dining information on site. Menu tags cannot establish allergy safety.</aside>
+  <div class="workspace">
+    <section aria-labelledby="chat-heading">
+      <div class="section-heading"><h2 id="chat-heading">Find a canteen</h2><button id="reset" class="secondary" type="button">New chat</button></div>
+      <div class="controls">
+        <label for="building">Starting building</label><select id="building"><option value="">Choose a building</option></select>
+        <label for="clock">Demo date &amp; time (Hong Kong)</label><div class="clock-row"><input type="datetime-local" id="clock" value="2026-10-23T12:30"><button id="now" type="button" class="secondary">Use now</button></div>
+      </div>
+      <div id="conversation" role="log" aria-live="polite" aria-label="Conversation"><p class="assistant">Where are you starting from? Try “spicy noodles under $40” or “vegetarian, 25 minutes between classes”.</p></div>
+      <form id="chat-form"><label for="message">Your request</label><textarea id="message" rows="2" maxlength="1000" required placeholder="Spicy, cheap and open at this time"></textarea><div class="form-footer"><span id="mode">Checking model connection…</span><button id="send" type="submit">Find food</button></div></form>
+      <p id="error" role="alert"></p>
+    </section>
+    <section aria-labelledby="results-heading"><div class="section-heading"><h2 id="results-heading">Your options</h2></div><p id="filters" class="muted">Your preferences will appear here.</p><p id="evaluated" class="muted"></p><div id="results"><div class="empty"><h3>Start with your building.</h3><p>We’ll check demo opening hours, match your preferences and estimate the walk.</p></div></div></section>
+  </div>
+  <footer>Starting prices in HKD. Walk estimates exclude queues and lifts. Time limits allow a return walk plus 10 minutes to eat. Session preferences expire after one hour; New chat clears them.</footer>
+</main>
+</body></html>
