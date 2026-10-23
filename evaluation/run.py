@@ -6,10 +6,10 @@ from datetime import datetime
 from app.engine import HK, ROOT, chat, is_open
 
 
-def check(case):
+def check(case, llm=None):
     state, outputs, errors = {}, [], []
     for index, text in enumerate(case['turns']):
-        result = chat(text, state, datetime(2026, 10, 23, 12, 30, tzinfo=HK))
+        result = chat(text, state, datetime(2026, 10, 23, 12, 30, tzinfo=HK), llm)
         outputs.append(result)
         if 'kinds' in case and result['kind'] != case['kinds'][index]:
             errors.append(f'Turn {index + 1}: expected {case["kinds"][index]}')

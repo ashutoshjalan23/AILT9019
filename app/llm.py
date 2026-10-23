@@ -42,7 +42,8 @@ class Bailian:
             req = Request(self.base.rstrip('/') + '/chat/completions',
                           data=json.dumps(body).encode(), method='POST',
                           headers={'Authorization': 'Bearer ' + self.key, 'Content-Type': 'application/json'})
-            with urlopen(req, timeout=15) as response:
+            # Live course-provider tests exceeded 15s on otherwise valid calls.
+            with urlopen(req, timeout=45) as response:
                 content = json.load(response)['choices'][0]['message']['content']
             value = json.loads(content)
             if not isinstance(value, dict):

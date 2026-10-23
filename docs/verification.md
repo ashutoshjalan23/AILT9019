@@ -6,7 +6,7 @@
 - Fixed offline evaluation: 20/20 pass, including normal 11/11, refusal 3/3, edge 3/3 and multi-turn 3/3. Actual outputs are in `evaluation/results.csv`. These are synthetic automated fixtures, not live LLM or human acceptance results.
 - JavaScript syntax check passes. Design skill preflight script reports zero hard violations and zero warnings.
 - Automated Microsoft Edge browser checks on 1280px desktop and 390px mobile: proactive location question, recommendations, vegetarian refinement, refusal clears prior results, reset, no horizontal mobile overflow and no JavaScript page errors. Light and dark screenshots visually inspected. Browser-check tooling is optional and not needed to run the app.
-- No paid model calls performed. Actual provider/model compatibility, live parsing quality, and credit consumption have not been verified.
+- Initial development was offline. After a key was supplied locally, a live JSON connectivity check succeeded and the separate `evaluation/live-summary.json` / `evaluation/live-results.csv` record the full live scenario run. Human review, public-data accuracy and shared-credit consumption remain unverified.
 
 ## UI review
 

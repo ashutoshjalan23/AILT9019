@@ -2,7 +2,7 @@
 
 AILT9019 midterm prototype: a small conversational campus dining assistant based on the supplied project proposal. Python standard library backend and plain HTML/CSS/JavaScript frontend. No package installation or build step is needed to run it.
 
-**All venues, menus, prices, opening hours and walking routes are synthetic.** This is a course demonstration, not a source of real HKU dining information. The offline prototype is working; live Bailian verification and public-data collection remain pending.
+**All venues, menus, prices, opening hours and walking routes are synthetic.** This is a course demonstration, not a source of real HKU dining information. The offline prototype is working; the separate live evaluation records provider integration results. Public-data collection and human acceptance remain pending.
 
 ## Open the demo
 
@@ -28,7 +28,7 @@ The Ed announcement provided in this chat specifies the **Aliyun Bailian Token P
 
 The key remains on the server, never in browser assets or Git. The first batch of course keys expires **19 November 2026**, according to the supplied announcement. The group shares **25,000 credits**, for course work only. Keep `.env` private and contact the TAs to rotate any exposed key.
 
-Calls are sequential, with no automatic retries and at most two calls per recommendation turn (parse and rank). Each response is capped at 500 output tokens, each message at 1,000 characters, with a default **30 attempted calls per server process**. Failed calls count too. Restarting resets this local cap; it does not track shared credits or other tools' use. No live paid API calls were made during development.
+Calls are sequential, with no automatic retries and at most two calls per recommendation turn (parse and rank). Each response is capped at 500 output tokens, each message at 1,000 characters, with a default **30 attempted calls per server process**. Failed calls count too. Restarting resets this local cap; it does not track shared credits or other tools' use. Initial development was offline; subsequent live test attempts are recorded separately in `evaluation/live-summary.json`.
 
 Course references: [Bailian Codex guide](https://docs.bailian.console.aliyun.com/en/model-studio/codex) and [Alibaba's OpenAI-compatible API reference](https://help.aliyun.com/en/model-studio/qwen-api-via-openai-chat-completions). The course endpoint and model configuration come from the Ed excerpt, which takes precedence over generic endpoint examples.
 
@@ -53,6 +53,10 @@ python -m evaluation.run
 ```
 
 The evaluation command writes `evaluation/results.csv` (Question → System output → Pass/Fail → Notes) and `evaluation/summary.json`. It is deliberately offline and reproducible, using Friday lunchtime and synthetic data. The 20 cases include 11 normal, 3 refusal, 3 edge and 3 multi-turn conversations. Automated fixture results do **not** establish live-model quality or human usefulness. A human review worksheet and presentation checklist are in `docs/midterm-review.md`.
+
+To explicitly test the real provider using your local key, run `python -m evaluation.live`. This spends course quota, makes sequential calls with a 50-attempt cap for the evaluation process, and writes separate `evaluation/live-results.csv` and `evaluation/live-summary.json` files. It tests all 20 conversations and counts rejected model responses or recommendation fallbacks as failures. Safety refusals intentionally run in code without model calls. It does not change the app's `BAILIAN_ENABLED` setting or replace independent human review.
+
+Use `python -m evaluation.live --failed` to retest only failures from that full live run. Retests go to separate `live-retest-results.csv` and `live-retest-summary.json` files, preserving the initial failures. Live testing exposed provider responses exceeding the original 15-second request timeout; the adapter now allows 45 seconds per call without automatic retries.
 
 ## Project files
 

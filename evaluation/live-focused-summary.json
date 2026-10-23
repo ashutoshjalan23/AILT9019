@@ -1,0 +1,19 @@
+{
+  "run_at": "2026-10-23T22:27:02.684816+08:00",
+  "mode": "live",
+  "model": "qwen3.8-flash",
+  "data": "synthetic",
+  "groups": {
+    "edge": [
+      1,
+      1
+    ]
+  },
+  "attempted_calls": 2,
+  "call_limit": 50,
+  "api_failures": [],
+  "case_ids": [
+    "E02"
+  ],
+  "limits": "Automated assertions with live parsing/ranking; synthetic data. No independent human quality review or shared-credit balance measurement. Safety refusals bypass the model by design."
+}

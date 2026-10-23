@@ -1,0 +1,56 @@
+{
+  "run_at": "2026-10-23T22:19:19.184717+08:00",
+  "mode": "live",
+  "model": "qwen3.8-flash",
+  "data": "synthetic",
+  "groups": {
+    "normal": [
+      8,
+      11
+    ],
+    "refusal": [
+      3,
+      3
+    ],
+    "edge": [
+      1,
+      3
+    ],
+    "multi_turn": [
+      1,
+      3
+    ]
+  },
+  "attempted_calls": 41,
+  "call_limit": 50,
+  "api_failures": [
+    {
+      "type": "TimeoutError"
+    },
+    {
+      "type": "TimeoutError"
+    },
+    {
+      "type": "TimeoutError"
+    },
+    {
+      "type": "TimeoutError"
+    },
+    {
+      "type": "TimeoutError"
+    },
+    {
+      "type": "TimeoutError"
+    },
+    {
+      "type": "TimeoutError"
+    },
+    {
+      "type": "TimeoutError"
+    },
+    {
+      "type": "TimeoutError"
+    }
+  ],
+  "limits": "Automated assertions with live parsing/ranking; synthetic data. No independent human quality review or shared-credit balance measurement. Safety refusals bypass the model by design."
+}

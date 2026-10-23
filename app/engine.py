@@ -196,8 +196,10 @@ def chat(text, state, at=None, llm=None):
     if result['mode'] == 'bailian':
         try:
             ranked = llm.complete(
-                'Rank only supplied eligible candidate IDs by user preferences. Return {"ids": [id,...], "reasons": {id: short reason}}. '
-                'Reasons must use only supplied prices, walk minutes and menu tags. Never claim allergy safety or current real-world accuracy.',
+                'Select and rank at most THREE supplied eligible candidate IDs by user preferences. '
+                'Return {"ids": [id,...], "reasons": {id: short reason}} only for those selected IDs. '
+                'Each reason must be at most 12 words using only supplied prices, walk minutes and menu tags. '
+                'Never claim allergy safety or current real-world accuracy.',
                 {'context': context, 'candidates': [{k: v[k] for k in ('id', 'price_min', 'walk_minutes', 'tags', 'cuisine')} for v in candidates]})
             ids, reasons = ranked.get('ids'), ranked.get('reasons', {})
             eligible = {v['id']: v for v in candidates}

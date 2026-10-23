@@ -1,0 +1,46 @@
+{
+  "run_at": "2026-10-23T22:26:22.595239+08:00",
+  "mode": "live",
+  "model": "qwen3.8-flash",
+  "data": "synthetic",
+  "groups": {
+    "normal": [
+      3,
+      3
+    ],
+    "edge": [
+      1,
+      2
+    ],
+    "multi_turn": [
+      0,
+      2
+    ]
+  },
+  "attempted_calls": 21,
+  "call_limit": 50,
+  "api_failures": [
+    {
+      "type": "URLError"
+    },
+    {
+      "type": "RemoteDisconnected"
+    },
+    {
+      "type": "TimeoutError"
+    },
+    {
+      "type": "TimeoutError"
+    }
+  ],
+  "case_ids": [
+    "N03",
+    "N07",
+    "N08",
+    "E02",
+    "E03",
+    "M01",
+    "M02"
+  ],
+  "limits": "Automated assertions with live parsing/ranking; synthetic data. No independent human quality review or shared-credit balance measurement. Safety refusals bypass the model by design."
+}

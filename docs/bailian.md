@@ -1,6 +1,6 @@
 # Sponsored Alibaba Cloud Bailian access
 
-Configuration source: the course Ed announcement excerpt supplied by the user on 23 October 2026. No group key was supplied or used.
+Configuration source: the course Ed announcement excerpt supplied by the user on 23 October 2026. A group key was subsequently added locally by the user and tested without including it in source or test reports. See `evaluation/live-summary.json` for actual live test results.
 
 | Setting | Course-provided value |
 | --- | --- |
